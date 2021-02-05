@@ -11,8 +11,8 @@ Amplify.configure(awsconfig);
 
 const getUserCreds = async () => {
   try {
-    const a = await Auth.signOut();
-    console.log(a);
+    const user = await Auth.currentAuthenticatedUser();
+    console.log(user.signInUserSession);
   } catch (error) {
     console.log(error);
   }
