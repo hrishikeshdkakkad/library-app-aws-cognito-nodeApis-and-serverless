@@ -2,3 +2,47 @@ book-library-application/node_modules
 backend-server-node-libraryApplication/node_modules
 .env
 new_user_credentials.csv
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+book-library-application/.pnp
+book-library-application/.pnp.js
+
+# testing
+book-library-application/coverage
+
+# production
+book-library-application/build
+
+# misc
+book-library-application/.DS_Store
+book-library-application/.env.local
+book-library-application/.env.development.local
+book-library-application/.env.test.local
+book-library-application/.env.production.local
+
+book-library-application/npm-debug.log*
+book-library-application/yarn-debug.log*
+book-library-application/yarn-error.log*
+
+#amplify
+book-library-application/amplify/\#current-cloud-backend
+book-library-application/amplify/.config/local-*
+book-library-application/amplify/logs
+book-library-application/amplify/mock-data
+book-library-application/amplify/backend/amplify-meta.json
+book-library-application/amplify/backend/awscloudformation
+book-library-application/amplify/backend/.temp
+book-library-application/build/
+book-library-application/dist/
+book-library-application/node_modules/
+book-library-application/aws-exports.js
+book-library-application/awsconfiguration.json
+book-library-application/amplifyconfiguration.json
+book-library-application/amplify-build-config.json
+book-library-application/amplify-gradle-config.json
+book-library-application/amplifytools.xcconfig
+
+book-library-application/env
+book-library-application/new_user_credentials.csv
