@@ -36,11 +36,24 @@
     },
     "Resources": {
     
+        "adminsGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "admins",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authbookLibraryAppAuthUserPoolId"
+              } 
+            }
+        },
+        
+    
         "applicationUsersGroup": {
           "Type" : "AWS::Cognito::UserPoolGroup",
           "Properties" : {
               "GroupName" : "applicationUsers",
-              "Precedence" : 1,
+              "Precedence" : 2,
               
               "UserPoolId" : {
                 "Ref": "authbookLibraryAppAuthUserPoolId"
