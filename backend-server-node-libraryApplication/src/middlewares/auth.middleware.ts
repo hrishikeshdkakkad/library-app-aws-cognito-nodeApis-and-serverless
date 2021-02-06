@@ -18,7 +18,6 @@ const authMiddleware = async (req: Request, res: Response, next: NextFunction): 
       console.log(err, 'err');
       next(new HttpException(401, err));
     } else {
-      console.log(response, 'response');
       res.locals.user = response;
       next();
     }
