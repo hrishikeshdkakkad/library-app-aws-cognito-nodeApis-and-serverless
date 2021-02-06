@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/hrishikeshkakkad/Documents/Fasal/backend-server-node-libraryApplication/src/logs/error/.433114a29bb563a161199177eb8b84979db6328c-audit.json",
+    "files": [
+        {
+            "date": 1612590496352,
+            "name": "/Users/hrishikeshkakkad/Documents/Fasal/backend-server-node-libraryApplication/src/logs/error/2021-02-06.error.log",
+            "hash": "8fd52d35b25baca7f004d966bb6c25f4"
+        }
+    ]
+}

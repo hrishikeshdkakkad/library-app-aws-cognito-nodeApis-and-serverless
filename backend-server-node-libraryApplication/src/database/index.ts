@@ -1,10 +1,20 @@
-const { MONGO_HOST, MONGO_PORT, MONGO_DATABASE } = process.env;
+import { connect } from 'mongoose';
 
-export const dbConnection = {
-  url: `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DATABASE}`,
-  options: {
+import { config } from '../config/app.config';
+import { logger } from '../utils/logger';
+
+export const dbConnection = () => {
+  const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
-  },
+  };
+
+  connect(config.db.url, options)
+    .then(() => {
+      logger.info('🟢 The database is connected.');
+    })
+    .catch(error => {
+      logger.error(`🔴 Unable to connect to the database: ${error}.`);
+    });
 };

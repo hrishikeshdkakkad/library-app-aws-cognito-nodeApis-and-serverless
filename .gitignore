@@ -1,5 +1,6 @@
 book-library-application/node_modules
 backend-server-node-libraryApplication/node_modules
+backend-server-node-libraryApplication/build
 .env
 new_user_credentials.csv
 
