@@ -9,7 +9,8 @@ const userSchema: Schema = new Schema({
   },
   items: [
     {
-      type: String,
+      _id: String,
+      title: String,
       default: [],
     },
   ],

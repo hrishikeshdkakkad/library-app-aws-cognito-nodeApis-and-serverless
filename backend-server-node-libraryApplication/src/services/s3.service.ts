@@ -4,7 +4,7 @@ import { ParamsToUploadToS3 } from '../utils/util';
 const s3 = new AWS.S3();
 
 class S3Operations {
-  async uploadToS3(image: Buffer, documentType: string, fileName: string, fileMime: string): string {
+  async uploadToS3(image: Buffer, documentType: string, fileName: string, fileMime: string): Promise<string> {
     const detectedMime = fileMime;
     const name = fileName;
 
