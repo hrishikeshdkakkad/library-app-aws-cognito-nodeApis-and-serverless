@@ -1,5 +1,17 @@
 import 'dotenv/config';
-const { MONGO_HOST, MONGO_PORT, NODE_ENV, PORT, REGION, COGNITO_USER_POOL_ID, TOKEN_USE, TOKEN_EXPIRATION, MONGO_HOST_PORT } = process.env;
+const {
+  MONGO_HOST,
+  MONGO_PORT,
+  NODE_ENV,
+  PORT,
+  REGION,
+  COGNITO_USER_POOL_ID,
+  TOKEN_USE,
+  TOKEN_EXPIRATION,
+  MONGO_HOST_PORT,
+  BUCKET,
+  BUCKET_REGION,
+} = process.env;
 
 export const config = {
   application: {
@@ -15,5 +27,9 @@ export const config = {
     cognitoUserPoolId: COGNITO_USER_POOL_ID as string,
     tokenUse: TOKEN_USE as string,
     tokenExpiration: TOKEN_EXPIRATION as string,
+  },
+  s3: {
+    bucket: BUCKET,
+    region: BUCKET_REGION,
   },
 };

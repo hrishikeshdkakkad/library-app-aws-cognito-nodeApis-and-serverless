@@ -64,3 +64,57 @@ Require stack:
     at Object.<anonymous> (/Users/hrishikeshkakkad/Documents/Fasal/backend-server-node-libraryApplication/node_modules/ts-node/src/bin.ts:288:3)
     at Module._compile (internal/modules/cjs/loader.js:1158:30)
     at Object.Module._extensions..js (internal/modules/cjs/loader.js:1178:10)
+2021-02-06 13:17:04 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 13:18:50 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:03 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 13:19:18 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:30 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:31 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:20:22 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 14:59:50 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:00:39 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:01:01 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:01:13 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:03:16 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:06:19 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:07:00 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:09:05 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:09:49 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:11:45 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:14:12 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:36:54 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:37:28 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:37:45 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:38:38 error: StatusCode : 500, Message : Unexpected field
+2021-02-06 15:50:42 error: StatusCode : 500, Message : Unexpected field
+2021-02-06 15:52:27 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:53:56 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:54:32 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 15:56:34 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 15:57:01 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 17:27:20 error: StatusCode : 500, Message : library is not defined
+2021-02-06 17:55:10 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 18:06:47 error: StatusCode : 401, Message : Unauthorized
+2021-02-06 18:07:07 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:14:34 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:15:21 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:15:23 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:16:10 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:17:25 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:18:22 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:25:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:25:47 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:36:34 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:37:20 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:38:31 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:41:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:42:40 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:42:56 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:45:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:46:53 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:47:15 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 19:34:12 error: StatusCode : 401, Message : TokenExpiredError: jwt expired
+2021-02-06 19:35:01 error: StatusCode : 500, Message : S3class is not defined
+2021-02-06 19:39:02 error: StatusCode : 500, Message : Access Denied
+2021-02-06 19:43:11 error: StatusCode : 500, Message : Access Denied
+2021-02-06 19:46:28 error: StatusCode : 500, Message : Access Denied

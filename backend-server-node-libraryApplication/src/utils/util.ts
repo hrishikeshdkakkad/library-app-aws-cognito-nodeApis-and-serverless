@@ -11,3 +11,15 @@ export const isEmpty = (value: any): boolean => {
     return false;
   }
 };
+
+export const ParamsToUploadToS3 = (image: Buffer, key: string, detectedMime: string, bucket: string, acl = 'public-read') => {
+  const uploadParams = {
+    Body: image,
+    Key: key,
+    ContentType: detectedMime,
+    Bucket: bucket,
+    ACL: acl,
+  };
+
+  return uploadParams;
+};

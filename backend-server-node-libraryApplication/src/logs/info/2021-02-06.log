@@ -1,0 +1,217 @@
+2021-02-06 13:11:33 info: 🟢 The database is connected.
+2021-02-06 13:12:03 info: 🟢 The database is connected.
+2021-02-06 13:13:23 info: 🟢 The database is connected.
+2021-02-06 13:13:25 info: 🟢 The database is connected.
+2021-02-06 13:13:30 info: [0mGET /api/v1/library-management/books/list [0m-[0m - ms - -[0m
+2021-02-06 13:13:44 info: 🟢 The database is connected.
+2021-02-06 13:13:52 info: [0mGET /api/v1/library-management/books/list [0m-[0m - ms - -[0m
+2021-02-06 13:15:03 info: 🟢 The database is connected.
+2021-02-06 13:15:33 info: 🟢 The database is connected.
+2021-02-06 13:17:02 info: 🟢 The database is connected.
+2021-02-06 13:17:04 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 13:17:04 info: [0mGET /api/v1/library-management/books/list [33m401[0m 5.225 ms - 35[0m
+2021-02-06 13:17:45 info: 🟢 The database is connected.
+2021-02-06 13:18:50 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:18:50 info: [0mGET /api/v1/library-management/books/list [33m401[0m 5.331 ms - 34[0m
+2021-02-06 13:19:01 info: 🟢 The database is connected.
+2021-02-06 13:19:03 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 13:19:03 info: [0mGET /api/v1/library-management/books/list [33m401[0m 5.611 ms - 35[0m
+2021-02-06 13:19:17 info: 🟢 The database is connected.
+2021-02-06 13:19:18 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:18 info: [0mGET /api/v1/library-management/books/list [33m401[0m 5.311 ms - 34[0m
+2021-02-06 13:19:28 info: 🟢 The database is connected.
+2021-02-06 13:19:30 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:30 info: [0mGET /api/v1/library-management/books/list [33m401[0m 5.139 ms - 34[0m
+2021-02-06 13:19:31 error: StatusCode : 401, Message : Something went wrong
+2021-02-06 13:19:31 info: [0mGET /api/v1/library-management/books/list [33m401[0m 1.165 ms - 34[0m
+2021-02-06 13:20:20 info: 🟢 The database is connected.
+2021-02-06 13:20:22 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 13:20:22 info: [0mGET /api/v1/library-management/books/list [33m401[0m 4.812 ms - 35[0m
+2021-02-06 13:22:05 info: [0mGET /api/v1/library-management/books/list [0m-[0m - ms - -[0m
+2021-02-06 13:23:05 info: 🟢 The database is connected.
+2021-02-06 13:26:45 info: 🟢 The database is connected.
+2021-02-06 13:27:53 info: 🟢 The database is connected.
+2021-02-06 14:09:59 info: 🟢 The database is connected.
+2021-02-06 14:59:48 info: 🟢 The database is connected.
+2021-02-06 14:59:50 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 14:59:50 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.311 ms - 52[0m
+2021-02-06 15:00:38 info: 🟢 The database is connected.
+2021-02-06 15:00:39 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:00:39 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.563 ms - 52[0m
+2021-02-06 15:00:56 info: 🟢 The database is connected.
+2021-02-06 15:01:01 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:01:01 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.772 ms - 52[0m
+2021-02-06 15:01:13 info: 🟢 The database is connected.
+2021-02-06 15:01:13 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:01:13 info: [0mPOST /api/v1/application-users/users [33m400[0m 6.102 ms - 52[0m
+2021-02-06 15:03:16 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:03:16 info: [0mPOST /api/v1/application-users/users [33m400[0m 1.532 ms - 52[0m
+2021-02-06 15:06:10 info: 🟢 The database is connected.
+2021-02-06 15:06:19 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:06:19 info: [0mPOST /api/v1/application-users/users [33m400[0m 6.086 ms - 52[0m
+2021-02-06 15:06:36 info: 🟢 The database is connected.
+2021-02-06 15:06:57 info: 🟢 The database is connected.
+2021-02-06 15:07:00 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:07:00 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.748 ms - 52[0m
+2021-02-06 15:08:07 info: 🟢 The database is connected.
+2021-02-06 15:09:02 info: 🟢 The database is connected.
+2021-02-06 15:09:05 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:09:05 info: [0mPOST /api/v1/application-users/users [33m400[0m 6.204 ms - 52[0m
+2021-02-06 15:09:13 info: 🟢 The database is connected.
+2021-02-06 15:09:46 info: 🟢 The database is connected.
+2021-02-06 15:09:49 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:09:49 info: [0mPOST /api/v1/application-users/users [33m400[0m 14.494 ms - 52[0m
+2021-02-06 15:11:43 info: 🟢 The database is connected.
+2021-02-06 15:11:45 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:11:45 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.841 ms - 52[0m
+2021-02-06 15:14:07 info: 🟢 The database is connected.
+2021-02-06 15:14:12 error: StatusCode : 400, Message : Enter User details in the right format
+2021-02-06 15:14:12 info: [0mPOST /api/v1/application-users/users [33m400[0m 5.789 ms - 52[0m
+2021-02-06 15:36:50 info: 🟢 The database is connected.
+2021-02-06 15:36:54 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:36:54 info: [0mPOST /api/v1/application-users/users [33m409[0m 169.009 ms - 63[0m
+2021-02-06 15:37:25 info: 🟢 The database is connected.
+2021-02-06 15:37:28 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:37:28 info: [0mPOST /api/v1/application-users/users [33m409[0m 145.185 ms - 63[0m
+2021-02-06 15:37:44 info: 🟢 The database is connected.
+2021-02-06 15:37:45 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:37:45 info: [0mPOST /api/v1/application-users/users [33m409[0m 157.016 ms - 63[0m
+2021-02-06 15:38:21 info: 🟢 The database is connected.
+2021-02-06 15:38:38 error: StatusCode : 500, Message : Unexpected field
+2021-02-06 15:38:38 info: [0mPOST /api/v1/application-users/users [31m500[0m 14.887 ms - 30[0m
+2021-02-06 15:49:37 info: 🟢 The database is connected.
+2021-02-06 15:50:42 error: StatusCode : 500, Message : Unexpected field
+2021-02-06 15:50:42 info: [0mPOST /api/v1/application-users/users [31m500[0m 16.015 ms - 30[0m
+2021-02-06 15:52:24 info: 🟢 The database is connected.
+2021-02-06 15:52:27 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:52:27 info: [0mPOST /api/v1/application-users/users [33m409[0m 220.727 ms - 63[0m
+2021-02-06 15:53:56 error: StatusCode : 409, Message : User with omarshannara26@gmail.com already exists
+2021-02-06 15:53:56 info: [0mPOST /api/v1/application-users/users [33m409[0m 144.609 ms - 63[0m
+2021-02-06 15:54:32 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 15:54:32 info: [0mPOST /api/v1/application-users/users [31m500[0m 293.980 ms - 108[0m
+2021-02-06 15:56:21 info: [0mPOST /api/v1/application-users/users [32m201[0m 279.097 ms - 94[0m
+2021-02-06 15:56:34 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 15:56:34 info: [0mPOST /api/v1/application-users/users [31m500[0m 274.783 ms - 108[0m
+2021-02-06 15:56:58 info: 🟢 The database is connected.
+2021-02-06 15:57:01 error: StatusCode : 500, Message : E11000 duplicate key error collection: library.users index: author_1 dup key: { author: null }
+2021-02-06 15:57:01 info: [0mPOST /api/v1/application-users/users [31m500[0m 296.734 ms - 108[0m
+2021-02-06 16:24:14 info: 🟢 The database is connected.
+2021-02-06 16:24:18 info: [0mPOST /api/v1/application-users/users [32m201[0m 294.510 ms - 96[0m
+2021-02-06 16:27:57 info: [0mPOST /api/v1/application-users/users [32m201[0m 393.812 ms - 96[0m
+2021-02-06 16:29:24 info: [0mPOST /api/v1/application-users/users [32m201[0m 260.598 ms - 89[0m
+2021-02-06 16:38:56 info: 🟢 The database is connected.
+2021-02-06 17:03:14 info: 🟢 The database is connected.
+2021-02-06 17:06:48 info: [0mPOST /api/v1/application-users/users [32m201[0m 507.305 ms - 105[0m
+2021-02-06 17:19:43 info: 🟢 The database is connected.
+2021-02-06 17:21:25 info: 🟢 The database is connected.
+2021-02-06 17:21:36 info: 🟢 The database is connected.
+2021-02-06 17:22:01 info: 🟢 The database is connected.
+2021-02-06 17:22:27 info: 🟢 The database is connected.
+2021-02-06 17:22:52 info: [0mGET /api/v1/library-management/books/list [32m200[0m 142.141 ms - 12[0m
+2021-02-06 17:27:17 info: 🟢 The database is connected.
+2021-02-06 17:27:20 error: StatusCode : 500, Message : library is not defined
+2021-02-06 17:27:20 info: [0mGET /api/v1/library-management/books/list [31m500[0m 154.469 ms - 36[0m
+2021-02-06 17:27:41 info: 🟢 The database is connected.
+2021-02-06 17:27:49 info: 🟢 The database is connected.
+2021-02-06 17:28:14 info: [0mGET /api/v1/library-management/books/list [32m200[0m 141.619 ms - 12[0m
+2021-02-06 17:29:21 info: 🟢 The database is connected.
+2021-02-06 17:36:16 info: 🟢 The database is connected.
+2021-02-06 17:38:12 info: 🟢 The database is connected.
+2021-02-06 17:44:09 info: 🟢 The database is connected.
+2021-02-06 17:44:41 info: 🟢 The database is connected.
+2021-02-06 17:45:04 info: 🟢 The database is connected.
+2021-02-06 17:50:11 info: 🟢 The database is connected.
+2021-02-06 17:51:30 info: 🟢 The database is connected.
+2021-02-06 17:53:03 info: 🟢 The database is connected.
+2021-02-06 17:53:41 info: 🟢 The database is connected.
+2021-02-06 17:53:53 info: 🟢 The database is connected.
+2021-02-06 17:54:40 info: [0mPOST /api/v1/application-users/books/add [33m404[0m 4.444 ms - 174[0m
+2021-02-06 17:55:10 error: StatusCode : 401, Message : Not a valid JWT token
+2021-02-06 17:55:10 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 4.498 ms - 35[0m
+2021-02-06 17:58:08 info: [0mPOST /api/v1/library-management/books/add [0m-[0m - ms - -[0m
+2021-02-06 17:59:19 info: 🟢 The database is connected.
+2021-02-06 18:00:13 info: 🟢 The database is connected.
+2021-02-06 18:00:15 info: 🟢 The database is connected.
+2021-02-06 18:02:11 info: 🟢 The database is connected.
+2021-02-06 18:02:42 info: 🟢 The database is connected.
+2021-02-06 18:03:04 info: 🟢 The database is connected.
+2021-02-06 18:03:43 info: 🟢 The database is connected.
+2021-02-06 18:06:08 info: 🟢 The database is connected.
+2021-02-06 18:06:42 info: 🟢 The database is connected.
+2021-02-06 18:06:45 info: 🟢 The database is connected.
+2021-02-06 18:06:47 error: StatusCode : 401, Message : Unauthorized
+2021-02-06 18:06:47 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 8.133 ms - 26[0m
+2021-02-06 18:07:04 info: 🟢 The database is connected.
+2021-02-06 18:07:07 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:07:07 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 7.792 ms - 41[0m
+2021-02-06 18:13:02 info: 🟢 The database is connected.
+2021-02-06 18:13:29 info: 🟢 The database is connected.
+2021-02-06 18:14:34 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:14:34 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 6.922 ms - 41[0m
+2021-02-06 18:15:21 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:15:21 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 2.134 ms - 41[0m
+2021-02-06 18:15:23 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:15:23 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 1.789 ms - 41[0m
+2021-02-06 18:16:10 error: StatusCode : 401, Message : Unauthorized - Not an admin
+2021-02-06 18:16:10 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 8.615 ms - 41[0m
+2021-02-06 18:17:21 info: 🟢 The database is connected.
+2021-02-06 18:17:25 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:17:25 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 15.061 ms - 47[0m
+2021-02-06 18:18:22 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:18:22 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 16.489 ms - 47[0m
+2021-02-06 18:24:05 info: 🟢 The database is connected.
+2021-02-06 18:25:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:25:07 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 45.314 ms - 47[0m
+2021-02-06 18:25:31 info: 🟢 The database is connected.
+2021-02-06 18:25:44 info: 🟢 The database is connected.
+2021-02-06 18:25:47 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:25:47 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 37.746 ms - 47[0m
+2021-02-06 18:36:30 info: 🟢 The database is connected.
+2021-02-06 18:36:34 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:36:34 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 38.510 ms - 47[0m
+2021-02-06 18:37:17 info: 🟢 The database is connected.
+2021-02-06 18:37:20 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:37:20 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 43.515 ms - 47[0m
+2021-02-06 18:38:28 info: 🟢 The database is connected.
+2021-02-06 18:38:31 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:38:31 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 37.914 ms - 47[0m
+2021-02-06 18:40:49 info: 🟢 The database is connected.
+2021-02-06 18:41:03 info: 🟢 The database is connected.
+2021-02-06 18:41:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:41:07 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 38.978 ms - 47[0m
+2021-02-06 18:42:39 info: 🟢 The database is connected.
+2021-02-06 18:42:40 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:42:40 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 42.281 ms - 47[0m
+2021-02-06 18:42:51 info: 🟢 The database is connected.
+2021-02-06 18:42:56 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:42:56 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 50.670 ms - 47[0m
+2021-02-06 18:45:05 info: 🟢 The database is connected.
+2021-02-06 18:45:07 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:45:07 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 40.058 ms - 47[0m
+2021-02-06 18:46:52 info: 🟢 The database is connected.
+2021-02-06 18:46:53 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:46:53 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 40.166 ms - 47[0m
+2021-02-06 18:47:14 info: 🟢 The database is connected.
+2021-02-06 18:47:15 error: StatusCode : 400, Message : Enter Details in the right format
+2021-02-06 18:47:15 info: [0mPOST /api/v1/library-management/books/add [33m400[0m 42.042 ms - 47[0m
+2021-02-06 18:52:20 info: 🟢 The database is connected.
+2021-02-06 18:52:27 info: 🟢 The database is connected.
+2021-02-06 18:52:49 info: 🟢 The database is connected.
+2021-02-06 18:52:56 info: 🟢 The database is connected.
+2021-02-06 19:22:49 info: 🟢 The database is connected.
+2021-02-06 19:26:40 info: 🟢 The database is connected.
+2021-02-06 19:29:59 info: 🟢 The database is connected.
+2021-02-06 19:33:31 info: 🟢 The database is connected.
+2021-02-06 19:34:12 error: StatusCode : 401, Message : TokenExpiredError: jwt expired
+2021-02-06 19:34:12 info: [0mPOST /api/v1/library-management/books/add [33m401[0m 18.207 ms - 103[0m
+2021-02-06 19:35:01 error: StatusCode : 500, Message : S3class is not defined
+2021-02-06 19:35:01 info: [0mPOST /api/v1/library-management/books/add [31m500[0m 51.705 ms - 36[0m
+2021-02-06 19:36:53 info: 🟢 The database is connected.
+2021-02-06 19:37:26 info: 🟢 The database is connected.
+2021-02-06 19:38:42 info: 🟢 The database is connected.
+2021-02-06 19:39:02 error: StatusCode : 500, Message : Access Denied
+2021-02-06 19:39:02 info: [0mPOST /api/v1/library-management/books/add [31m500[0m 11423.358 ms - 27[0m
+2021-02-06 19:43:11 error: StatusCode : 500, Message : Access Denied
+2021-02-06 19:43:11 info: [0mPOST /api/v1/library-management/books/add [31m500[0m 1503.876 ms - 27[0m
+2021-02-06 19:46:28 error: StatusCode : 500, Message : Access Denied
+2021-02-06 19:46:28 info: [0mPOST /api/v1/library-management/books/add [31m500[0m 1533.661 ms - 27[0m

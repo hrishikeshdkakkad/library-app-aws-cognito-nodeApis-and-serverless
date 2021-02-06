@@ -7,6 +7,12 @@ const userSchema: Schema = new Schema({
     required: true,
     index: true,
   },
+  items: [
+    {
+      type: String,
+      default: [],
+    },
+  ],
 });
 
 const userModel = model<IUser & Document>('User', userSchema);
