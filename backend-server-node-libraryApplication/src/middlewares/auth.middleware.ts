@@ -1,31 +1,28 @@
-import { NextFunction, Response } from 'express';
-import jwt from 'jsonwebtoken';
+import { NextFunction, Response, Request } from 'express';
+import CognitoExpress from 'cognito-express';
+
 import HttpException from '../exceptions/HttpException';
-import { DataStoredInToken, RequestWithUser } from '../interfaces/auth.interface';
-import userModel from '../models/users.model';
+import { config } from '../config/app.config';
 
-const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFunction) => {
-  try {
-    const cookies = req.cookies;
+const cognitoExpress = new CognitoExpress({
+  region: config.auth.region,
+  cognitoUserPoolId: config.auth.cognitoUserPoolId,
+  tokenUse: config.auth.tokenUse,
+  tokenExpiration: parseInt(config.auth.tokenExpiration),
+});
 
-    if (cookies && cookies.Authorization) {
-      const secret = process.env.JWT_SECRET;
-      const verificationResponse = (await jwt.verify(cookies.Authorization, secret)) as DataStoredInToken;
-      const userId = verificationResponse._id;
-      const findUser = await userModel.findById(userId);
-
-      if (findUser) {
-        req.user = findUser;
-        next();
-      } else {
-        next(new HttpException(401, 'Wrong authentication token'));
-      }
+const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  const { token } = req.headers;
+  cognitoExpress.validate(token, (err, response) => {
+    if (err) {
+      console.log(err, 'err');
+      next(new HttpException(401, err));
     } else {
-      next(new HttpException(404, 'Authentication token missing'));
+      console.log(response, 'response');
+      res.locals.user = response;
+      next();
     }
-  } catch (error) {
-    next(new HttpException(401, 'Wrong authentication token'));
-  }
+  });
 };
 
 export default authMiddleware;

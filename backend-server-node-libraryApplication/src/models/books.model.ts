@@ -1,7 +1,7 @@
 import { model, Schema, Document } from 'mongoose';
-import { User } from '../interfaces/users.interface';
+import { IBook } from '../interfaces/books.interface';
 
-const userSchema: Schema = new Schema({
+const bookSchema: Schema = new Schema({
   email: {
     type: String,
     required: true,
@@ -13,6 +13,6 @@ const userSchema: Schema = new Schema({
   },
 });
 
-const userModel = model<User & Document>('User', userSchema);
+const bookModel = model<IBook & Document>('Book', bookSchema);
 
-export default userModel;
+export default bookModel;
