@@ -7,7 +7,7 @@ import authMiddleware from '../../../middlewares/auth.middleware';
 import isAdmin from '../../../middlewares/isAdmin.middleware';
 import validationMiddleware from '../../../middlewares/validation.middleware';
 
-import CreateBookDTO from '../../../dtos/books.dto';
+import { CreateBookDTO } from '../../../dtos/books.dto';
 
 const router = Router();
 
