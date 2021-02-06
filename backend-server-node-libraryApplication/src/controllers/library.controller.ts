@@ -30,6 +30,28 @@ class LibraryController {
       next(error);
     }
   };
+
+  public AddBookToCart = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { bookID } = req.body;
+      const { username } = res.locals.user;
+      const result = await this.library.addBookToCart(bookID, username);
+      res.status(200).send();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  public RemoveBookFromUserCart = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { bookID } = req.body;
+      const { username } = res.locals.user;
+      const result = await this.library.removeBookFromCart(bookID, username);
+      res.status(200).send({ result });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 export const libraryController = new LibraryController();

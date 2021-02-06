@@ -12,9 +12,11 @@ import CreateBookDTO from '../../../dtos/books.dto';
 const router = Router();
 
 const booksImage = upload.single('image');
+const bookId = upload.fields([{ name: 'bookID' }]);
 
 router.get('/books/list', libraryController.getAllBooks);
 router.post('/books/add', authMiddleware, isAdmin, validationMiddleware(CreateBookDTO, 'body'), booksImage, libraryController.addBookIntoDatabase);
-// router.post('/library-management/employee', validationMiddleware(CreateEmployeeDto, 'body'), isValidDate(), EmployeeController.addEmployee);
+router.post('/books/add-to-cart', authMiddleware, bookId, libraryController.AddBookToCart);
+router.patch('/books/remove-from-cart', authMiddleware, bookId, libraryController.RemoveBookFromUserCart);
 
 export default router;
