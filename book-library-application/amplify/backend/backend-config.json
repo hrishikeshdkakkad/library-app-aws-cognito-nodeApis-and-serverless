@@ -6,7 +6,7 @@
       "dependsOn": [
         {
           "category": "auth",
-          "resourceName": "bookLibraryAppAuth",
+          "resourceName": "bookLibraryApplicationAuth",
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
@@ -15,7 +15,7 @@
         }
       ]
     },
-    "bookLibraryAppAuth": {
+    "bookLibraryApplicationAuth": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

@@ -1,19 +1,8 @@
-import { Router } from 'express';
-import IndexController from '../controllers/index.controller';
-import Route from '../interfaces/routes.interface';
+import express from 'express';
+const route = express.Router();
 
-class IndexRoute implements Route {
-  public path = '/';
-  public router = Router();
-  public indexController = new IndexController();
+import router from './v1/employee.routes';
 
-  constructor() {
-    this.initializeRoutes();
-  }
+route.use('/v1', router);
 
-  private initializeRoutes() {
-    this.router.get(`${this.path}`, this.indexController.index);
-  }
-}
-
-export default IndexRoute;
+export default route;

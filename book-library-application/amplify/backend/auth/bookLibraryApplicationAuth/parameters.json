@@ -1,6 +1,6 @@
 {
-    "resourceNameTruncated": "bookliad60e924",
-    "userPoolName": "book-library-application-user-pool",
+    "resourceNameTruncated": "bookli234b3edd",
+    "userPoolName": "libraryApplicationUserPool",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -26,10 +26,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "bookLiad60e924_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "bookLi234b3edd_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ad60e924",
-    "resourceName": "bookLibraryAppAuth",
+    "sharedId": "234b3edd",
+    "resourceName": "bookLibraryApplicationAuth",
     "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -44,14 +44,12 @@
         ]
     },
     "useDefault": "manual",
-    "usernameAttributes": [
-        "email"
-    ],
     "userPoolGroups": true,
     "adminQueries": false,
     "triggers": "{}",
     "hostedUI": false,
     "userPoolGroupList": [
+        "admins",
         "applicationUsers"
     ],
     "serviceName": "Cognito",
