@@ -7,7 +7,8 @@ export const config = {
     PORT: PORT,
   },
   db: {
-    url: `mongodb://${MONGO_HOST}:${MONGO_PORT}/library-mgt` as string,
+    url: `mongodb+srv://admin-hrishikesh:Sureshot2812!@hrishikesh.9v1o8.mongodb.net/library?retryWrites=true&w=majority`,
+    // url: `mongodb://${MONGO_HOST}:${MONGO_PORT}/library-mgt` as string,
   },
   auth: {
     region: REGION as string,
