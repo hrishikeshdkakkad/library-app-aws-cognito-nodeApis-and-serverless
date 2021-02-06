@@ -17,10 +17,13 @@ class LibraryController {
 
   public addBookIntoDatabase = async (req: Request, res: Response, next: NextFunction) => {
     const bookDetails = req.body;
-    const bookImagePath = req.file.path;
+    const { filename, mimetype, path } = req.file;
+
+    console.log(req.file, 'zzzz');
+
     try {
-      const imageBuffer = await convertToBuffer(bookImagePath);
-      const s3UploadedFilePath = await s3ops.uploadToS3(imageBuffer, 'book-cover', bookDetails.filename, bookDetails.mimetype);
+      const imageBuffer = await convertToBuffer(path);
+      const s3UploadedFilePath = await s3ops.uploadToS3(imageBuffer, 'book-cover', filename, mimetype);
       bookDetails['image'] = s3UploadedFilePath;
       console.log('Final book details', bookDetails);
       const addedBook: IBook = await this.library.addBook(bookDetails);

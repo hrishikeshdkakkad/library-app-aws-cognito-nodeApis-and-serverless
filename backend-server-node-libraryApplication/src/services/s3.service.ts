@@ -13,9 +13,9 @@ class S3Operations {
     console.log(`writing image to bucket called ${key}`);
     await s3.putObject(ParamsToUploadToS3(image, key, detectedMime, config.s3.bucket)).promise();
 
-    const url = `https://${config.s3.bucket}.
-          s3-${config.s3.region}.
-          amazonaws.com/${key}`;
+    console.log(key, 'key');
+
+    const url = `https://${config.s3.bucket}.s3-${config.s3.region}.amazonaws.com/${key}`;
 
     return url;
   }

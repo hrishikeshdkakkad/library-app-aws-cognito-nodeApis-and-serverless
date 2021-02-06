@@ -13,15 +13,19 @@ const cognitoExpress = new CognitoExpress({
 
 const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const { token } = req.headers;
-  cognitoExpress.validate(token, (err, response) => {
-    if (err) {
-      console.log(err, 'err');
-      next(new HttpException(401, err));
-    } else {
-      res.locals.user = response;
-      next();
-    }
-  });
+  if (token) {
+    cognitoExpress.validate(token, (err, response) => {
+      if (err) {
+        console.log(err, 'err');
+        next(new HttpException(401, err));
+      } else {
+        res.locals.user = response;
+        next();
+      }
+    });
+  } else {
+    next(new HttpException(401, 'Unauthorized - no token'));
+  }
 };
 
 export default authMiddleware;
