@@ -15,6 +15,13 @@ class UserService {
     const createdUser: IUser = await this.user.create(user);
     return createdUser;
   }
+
+  async getUserCart(user: string): Promise<IUser> {
+    if (isEmpty(user)) throw new HttpException(400, 'Enter User details in the right format');
+
+    const foundUser: IUser = await this.user.findOne({ username: user });
+    return foundUser;
+  }
 }
 
 export const userService = new UserService();
