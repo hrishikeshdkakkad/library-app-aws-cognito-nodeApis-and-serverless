@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { IBook } from '../interfaces/books.interface';
 import { libraryService } from '../services/library.service';
 import { s3ops } from '../services/s3.service';
-import { convertToBuffer } from '../utils/convertToBuffer';
+import { convertToBuffer, deleteImageFile } from '../utils/convertToBuffer';
 
 class LibraryController {
   library = libraryService;
@@ -15,20 +15,18 @@ class LibraryController {
     }
   };
 
-  public addBookIntoDatabase = async (req: Request, res: Response, next: NextFunction) => {
-    const bookDetails = req.body;
-    const { filename, mimetype, path } = req.file;
-
-    console.log(req.file, 'zzzz');
-
+  public addBookIntoDatabase = async (req: any, res: any, next: NextFunction) => {
     try {
+      const bookDetails = req.body;
+      const { filename, mimetype, path } = req.file;
       const imageBuffer = await convertToBuffer(path);
       const s3UploadedFilePath = await s3ops.uploadToS3(imageBuffer, 'book-cover', filename, mimetype);
       bookDetails['image'] = s3UploadedFilePath;
-      console.log('Final book details', bookDetails);
       const addedBook: IBook = await this.library.addBook(bookDetails);
+      await deleteImageFile(path);
       res.status(200).json({ addedBook });
     } catch (error) {
+      console.log(error);
       next(error);
     }
   };
