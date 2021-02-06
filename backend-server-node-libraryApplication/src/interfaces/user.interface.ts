@@ -5,5 +5,5 @@ interface ICart {
 
 export interface IUser {
   username: string;
-  items: ICart[];
+  items?: ICart[];
 }

@@ -1,4 +1,4 @@
-import { IsEmail, isNumber, IsString } from 'class-validator';
+import { IsEmail, isIn, isInt, isNotEmpty, isNumber, IsString } from 'class-validator';
 
 export class CreateBookDTO {
   @IsEmail()
@@ -10,10 +10,8 @@ export class CreateBookDTO {
   @IsString()
   public title: string;
 
-  @isNumber()
   public ratings: number;
 
-  @isNumber()
   public price: number;
 
   public image: Buffer;

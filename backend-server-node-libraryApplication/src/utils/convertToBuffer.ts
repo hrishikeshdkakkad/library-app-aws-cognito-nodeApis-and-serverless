@@ -10,6 +10,6 @@ export const convertToBuffer = async (filePath: string): Promise<Buffer> => {
   return fileData;
 };
 
-export const deleteImageFile = async (path: string): void => {
+export const deleteImageFile = async (path: string): Promise<void> => {
   await deleteFile(path);
 };
