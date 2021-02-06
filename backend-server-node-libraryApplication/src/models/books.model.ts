@@ -2,14 +2,31 @@ import { model, Schema, Document } from 'mongoose';
 import { IBook } from '../interfaces/books.interface';
 
 const bookSchema: Schema = new Schema({
-  email: {
+  author: {
+    type: String,
+    required: true,
+  },
+  genre: {
+    type: String,
+    required: true,
+  },
+  title: {
     type: String,
     required: true,
     unique: true,
   },
-  password: {
+  ratings: {
+    type: Number,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  image: {
     type: String,
     required: true,
+    unique: true,
   },
 });
 

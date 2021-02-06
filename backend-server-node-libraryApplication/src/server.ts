@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import compression from 'compression';
 import { set } from 'mongoose';
 import boolParser from 'express-query-boolean';
+import bodyParser from 'body-parser';
 
 import IndexRoute from './routes/index.route';
 import { dbConnection } from './database';
@@ -34,8 +35,8 @@ app.use(cors());
 app.use(hpp());
 app.use(helmet());
 app.use(compression());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(boolParser());
 app.use(cookieParser());
 
