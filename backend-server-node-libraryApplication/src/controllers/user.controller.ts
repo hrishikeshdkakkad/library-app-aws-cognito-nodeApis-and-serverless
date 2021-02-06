@@ -13,6 +13,16 @@ class UserController {
       next(error);
     }
   };
+
+  public getUserCart = async (req: Request, res: Response, next: NextFunction) => {
+    const { username } = res.locals.user;
+    try {
+      const user: IUser = await userService.getUserCart(username);
+      res.status(200).send({ items: user.items, count: user.items.length });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export const userController = new UserController();
