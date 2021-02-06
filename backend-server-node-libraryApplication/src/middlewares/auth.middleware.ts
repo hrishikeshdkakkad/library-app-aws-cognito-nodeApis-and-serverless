@@ -1,31 +1,28 @@
-// import { NextFunction, Response } from 'express';
-// import jwt from 'jsonwebtoken';
-// import HttpException from '../exceptions/HttpException';
-// import { DataStoredInToken, RequestWithUser } from '../interfaces/auth.interface';
-// import userModel from '../models/books.model';
+import { NextFunction, Response, Request } from 'express';
+import CognitoExpress from 'cognito-express';
 
-// const authMiddleware = async (req: RequestWithUser, res: Response, next: NextFunction) => {
-//   try {
-//     const cookies = req.cookies;
+import HttpException from '../exceptions/HttpException';
+import { config } from '../config/app.config';
 
-//     if (cookies && cookies.Authorization) {
-//       const secret = process.env.JWT_SECRET;
-//       const verificationResponse = (await jwt.verify(cookies.Authorization, secret)) as DataStoredInToken;
-//       const userId = verificationResponse._id;
-//       const findUser = await userModel.findById(userId);
+const cognitoExpress = new CognitoExpress({
+  region: config.auth.region,
+  cognitoUserPoolId: config.auth.cognitoUserPoolId,
+  tokenUse: config.auth.tokenUse,
+  tokenExpiration: parseInt(config.auth.tokenExpiration),
+});
 
-//       if (findUser) {
-//         req.user = findUser;
-//         next();
-//       } else {
-//         next(new HttpException(401, 'Wrong authentication token'));
-//       }
-//     } else {
-//       next(new HttpException(404, 'Authentication token missing'));
-//     }
-//   } catch (error) {
-//     next(new HttpException(401, 'Wrong authentication token'));
-//   }
-// };
+const authMiddleware = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  const { token } = req.headers;
+  cognitoExpress.validate(token, (err, response) => {
+    if (err) {
+      console.log(err, 'err');
+      next(new HttpException(401, err));
+    } else {
+      console.log(response, 'response');
+      res.locals.user = response;
+      next();
+    }
+  });
+};
 
-// export default authMiddleware;
+export default authMiddleware;
