@@ -1,20 +1,34 @@
-import React, { Component } from "react";
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import React from "react";
+import Badge from "@material-ui/core/Badge";
+import { Theme, withStyles, createStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import { useHistory } from "react-router-dom";
 
-interface Props {}
-interface State {}
+const StyledBadge = withStyles((theme: Theme) =>
+  createStyles({
+    badge: {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  })
+)(Badge);
 
-class cart extends Component<Props, State> {
-  state = {};
-
-  render() {
-    return (
-      <div>
-        <h1>This is the cart component</h1>
-        <AmplifySignOut />
-      </div>
-    );
-  }
+interface IProps {
+  cart_item: number;
 }
 
-export default withAuthenticator(cart);
+const CustomizedBadges: React.FC<IProps> = (props: IProps) => {
+  const history = useHistory();
+  return (
+    <IconButton onClick={() => history.push("/cart")} aria-label="cart">
+      <StyledBadge badgeContent={props.cart_item} color="secondary">
+        <ShoppingCartIcon />
+      </StyledBadge>
+    </IconButton>
+  );
+};
+
+export default CustomizedBadges;
