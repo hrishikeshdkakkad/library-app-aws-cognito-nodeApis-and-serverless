@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import BooksTable from "./Books";
 import axios from "axios";
-import { Auth } from "aws-amplify";
+import { sessionDetails } from "../../common/isAuthenticated";
+import { Console } from "console";
+import Auth from "@aws-amplify/auth";
+import { BASE_URL, NO_USER_SESSION } from "../../common/constants";
 
 interface Props {}
 
@@ -29,11 +32,12 @@ class HomePage extends Component<Props, State> {
   };
 
   async componentDidMount() {
-    const baseUrl = "http://localhost:3000/api/v1";
+    const session = await sessionDetails();
+    console.log(session, "session");
 
     try {
       const result = await axios.get(
-        `${baseUrl}/library-management/books/list`
+        `${BASE_URL()}/library-management/books/list`
       );
 
       const bookData = result.data.books as IBook[];
@@ -42,21 +46,19 @@ class HomePage extends Component<Props, State> {
       console.log(error);
     }
     try {
-      const sessionDetails = await Auth.currentSession();
-      let token = "";
-      if (sessionDetails.getAccessToken().getJwtToken()) {
-        token = sessionDetails.getAccessToken().getJwtToken();
+      const token = await sessionDetails();
+      if (token !== NO_USER_SESSION) {
+        let config = {
+          headers: {
+            token: token,
+          },
+        };
+        const cartItemIfAuth = await axios.get(
+          `${BASE_URL()}/application-users/users/cart`,
+          config
+        );
+        this.setState({ cart_item: cartItemIfAuth.data.count });
       }
-      let config = {
-        headers: {
-          token: token || "",
-        },
-      };
-      const cartItemIfAuth = await axios.get(
-        `${baseUrl}/application-users/users/cart`,
-        config
-      );
-      this.setState({ cart_item: cartItemIfAuth.data.count });
     } catch (error) {
       this.setState({ cart_item: 0 });
     }
