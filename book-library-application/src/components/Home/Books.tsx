@@ -15,6 +15,7 @@ import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
 import Container from "@material-ui/core/Container";
 import CustomizedBadges from "../ProtectedComponents/Cart/Cart";
+import { Redirect } from "react-router-dom";
 
 import { addToCart } from "../../common/addToCartApiCall";
 
@@ -180,11 +181,6 @@ interface IProps extends ICartContent {
   books: IBook[];
 }
 
-async function data(book_id: string) {
-  const cartResponse = await addToCart(book_id);
-  console.log(cartResponse);
-}
-
 const BooksTable: React.FC<IProps> = (props: IProps) => {
   console.log(props);
   const classes = useStyles();
@@ -194,6 +190,7 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(true);
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
@@ -221,12 +218,21 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
 
   const isSelected = (name: string) => selected.indexOf(name) !== -1;
 
+  async function data(book_id: string) {
+    const cartResponse = await addToCart(book_id);
+    console.log(cartResponse);
+    if (!cartResponse) {
+      setIsLoggedIn(false);
+    }
+  }
+
   const emptyRows =
     rowsPerPage -
     Math.min(rowsPerPage, props.books.length - page * rowsPerPage);
 
-  return (
+  const component = (
     <Container maxWidth="lg">
+      {console.log(isLoggedIn, "isLoggedIn")}
       <CustomizedBadges cart_item={props.cart_items} />
       <div className={classes.root}>
         <Paper className={classes.paper}>
@@ -323,6 +329,10 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
         />
       </div>
     </Container>
+  );
+
+  return (
+    <div>{isLoggedIn ? <div>{component}</div> : <Redirect to="/cart" />}</div>
   );
 };
 

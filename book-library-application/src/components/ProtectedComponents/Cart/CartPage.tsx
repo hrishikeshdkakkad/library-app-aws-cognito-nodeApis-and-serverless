@@ -10,6 +10,8 @@ import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { BASE_URL } from "../../../common/constants";
 import { sessionDetails } from "../../../common/isAuthenticated";
+import { deleteFromCart } from "../../../common/deleteFromCartApiCall";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -28,9 +30,26 @@ const useStyles = makeStyles({
   },
 });
 
+interface IBook {
+  _id: string;
+  title: string;
+}
+
 function CartPage() {
   const classes = useStyles();
   const [data, dataSet] = useState([]);
+  const history = useHistory();
+
+  async function deleteBook(bookID: string) {
+    const response = await deleteFromCart(bookID);
+    console.log(response, "resres");
+    if (response) {
+      const updatedUserCart = data.filter((book: IBook) => {
+        return book._id !== bookID;
+      });
+      dataSet(updatedUserCart);
+    }
+  }
 
   useEffect(() => {
     async function getUserCart() {
@@ -55,19 +74,36 @@ function CartPage() {
     <Container>
       {data.map((book: any) => {
         return (
-          <Card className={classes.root}>
+          <Card key={book._id} className={classes.root}>
             <CardContent>
               <Typography variant="h4" component="h2">
                 {book.title}
               </Typography>
-              <Button size="large" color="secondary">
+              <Button
+                onClick={() => {
+                  deleteBook(book._id);
+                }}
+                size="large"
+                color="secondary"
+              >
                 Delete from Cart
               </Button>
             </CardContent>
           </Card>
         );
       })}
-      ;
+      <Button
+        onClick={() => {
+          history.push("/");
+        }}
+        size="large"
+        color="primary"
+        style={{ marginTop: "45px", marginBottom: "45px" }}
+      >
+        Go to Home Page
+      </Button>
+
+      <AmplifySignOut />
     </Container>
   );
 }
