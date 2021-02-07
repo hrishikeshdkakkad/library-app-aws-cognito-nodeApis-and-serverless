@@ -38,6 +38,7 @@ class HomePage extends Component<Props, State> {
       const result = await axios.get(
         `${baseUrl}/library-management/books/list`
       );
+      console.log(result, "result");
       const bookData = result.data.books as IBook[];
       this.setState({ books: bookData });
     } catch (error) {
@@ -54,6 +55,7 @@ class HomePage extends Component<Props, State> {
         `${baseUrl}/application-users/users/cart`,
         config
       );
+      console.log(cartItemIfAuth, "cartItemIfAuth");
       this.setState({ cart_item: cartItemIfAuth.data.count });
     } catch (error) {
       console.log(error);
