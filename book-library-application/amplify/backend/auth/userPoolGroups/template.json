@@ -1,0 +1,68 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "authbookLibraryApplicationAuthUserPoolId": {
+            "Type": "String",
+            "Default": "authbookLibraryApplicationAuthUserPoolId"
+        },
+        
+        "authbookLibraryApplicationAuthAppClientID": {
+            "Type": "String",
+            "Default": "authbookLibraryApplicationAuthAppClientID"
+        },
+        "authbookLibraryApplicationAuthAppClientIDWeb": {
+            "Type": "String",
+            "Default": "authbookLibraryApplicationAuthAppClientIDWeb"
+        },
+        "AuthRoleArn": {
+            "Type": "String"
+        },
+        "UnauthRoleArn": {
+            "Type": "String"
+        },
+        "env": {
+            "Type": "String"
+        }
+    },
+    "Conditions": {
+        "ShouldNotCreateEnvResources": {
+            "Fn::Equals": [
+                {
+                    "Ref": "env"
+                },
+                "NONE"
+            ]
+        }
+    },
+    "Resources": {
+    
+        "adminsGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "admins",
+              "Precedence" : 1,
+              
+              "UserPoolId" : {
+                "Ref": "authbookLibraryApplicationAuthUserPoolId"
+              } 
+            }
+        },
+        
+    
+        "applicationUsersGroup": {
+          "Type" : "AWS::Cognito::UserPoolGroup",
+          "Properties" : {
+              "GroupName" : "applicationUsers",
+              "Precedence" : 2,
+              
+              "UserPoolId" : {
+                "Ref": "authbookLibraryApplicationAuthUserPoolId"
+              } 
+            }
+        },
+        
+    
+    
+    },
+    
+}
