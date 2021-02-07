@@ -29,36 +29,36 @@ class HomePage extends Component<Props, State> {
   };
 
   async componentDidMount() {
-    const sessionDetails = await Auth.currentSession();
-    const token = sessionDetails.getAccessToken().getJwtToken();
-
     const baseUrl = "http://localhost:3000/api/v1";
 
     try {
       const result = await axios.get(
         `${baseUrl}/library-management/books/list`
       );
-      console.log(result, "result");
+
       const bookData = result.data.books as IBook[];
       this.setState({ books: bookData });
     } catch (error) {
       console.log(error);
     }
-
     try {
+      const sessionDetails = await Auth.currentSession();
+      let token = "";
+      if (sessionDetails.getAccessToken().getJwtToken()) {
+        token = sessionDetails.getAccessToken().getJwtToken();
+      }
       let config = {
         headers: {
-          token: token,
+          token: token || "",
         },
       };
       const cartItemIfAuth = await axios.get(
         `${baseUrl}/application-users/users/cart`,
         config
       );
-      console.log(cartItemIfAuth, "cartItemIfAuth");
       this.setState({ cart_item: cartItemIfAuth.data.count });
     } catch (error) {
-      console.log(error);
+      this.setState({ cart_item: 0 });
     }
   }
 
