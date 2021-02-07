@@ -9,7 +9,7 @@ import awsconfig from "./aws-exports";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/Home/HomePage";
-import Cart from "./components/ProtectedComponents/Cart/Cart";
+import CartPage from "./components/ProtectedComponents/Cart/CartPage";
 Amplify.configure(awsconfig);
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route path="/cart" component={Cart} />
+              <Route exact path="/cart" component={CartPage} />
             </Switch>
           </div>
         </Router>

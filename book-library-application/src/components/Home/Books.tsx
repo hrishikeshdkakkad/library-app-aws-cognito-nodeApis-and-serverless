@@ -11,6 +11,10 @@ import TableSortLabel from "@material-ui/core/TableSortLabel";
 import Paper from "@material-ui/core/Paper";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
+import Container from "@material-ui/core/Container";
+import CustomizedBadges from "../ProtectedComponents/Cart/Cart";
 
 interface Data {
   author: number;
@@ -20,44 +24,6 @@ interface Data {
   price: number;
   image: string;
 }
-
-function createData(
-  title: string,
-  author: number,
-  ratings: number,
-  genre: string,
-  price: number,
-  image: string
-): Data {
-  return { title, author, ratings, genre, price, image };
-}
-
-const rows = [
-  createData(
-    "Cupcake",
-    305,
-    3.7,
-    "Hp",
-    4.3,
-    "https://library-management.s3-ap-south-1.amazonaws.com/book-cover-03944f1d167de5dace0fa26e2348ac70"
-  ),
-  createData(
-    "Donut",
-    452,
-    25.0,
-    "Th",
-    4.9,
-    "https://library-management.s3-ap-south-1.amazonaws.com/book-cover-7ac1e6050451de98ca2f7163ff6576e6"
-  ),
-  createData(
-    "Eclair",
-    262,
-    16.0,
-    "GOD",
-    6.0,
-    "https://library-management.s3-ap-south-1.amazonaws.com/book-cover-6ad4eebde028ec08625f77d05b6922ad"
-  ),
-];
 
 function descendingComparator<T>(a: T, b: T, orderBy: keyof T) {
   if (b[orderBy] < a[orderBy]) {
@@ -159,6 +125,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             </TableSortLabel>
           </TableCell>
         ))}
+        <CustomizedBadges />
       </TableRow>
     </TableHead>
   );
@@ -168,6 +135,11 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: "100%",
+      typography: {
+        ...theme.typography.button,
+        backgroundColor: theme.palette.background.paper,
+        padding: theme.spacing(1),
+      },
     },
     paper: {
       width: "100%",
@@ -201,6 +173,10 @@ interface IBook {
 }
 interface IProps {
   books: IBook[];
+}
+
+function data(row: string) {
+  console.log(row);
 }
 
 const BooksTable: React.FC<IProps> = (props: IProps) => {
@@ -239,92 +215,106 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
   const isSelected = (name: string) => selected.indexOf(name) !== -1;
 
   const emptyRows =
-    rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
+    rowsPerPage -
+    Math.min(rowsPerPage, props.books.length - page * rowsPerPage);
 
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <TableContainer>
-          <Table
-            className={classes.table}
-            aria-labelledby="tableTitle"
-            size={dense ? "small" : "medium"}
-            aria-label="enhanced table"
-            style={{ height: "85vh", width: "100%" }}
-          >
-            <EnhancedTableHead
-              classes={classes}
-              numSelected={selected.length}
-              order={order}
-              orderBy={orderBy}
-              onRequestSort={handleRequestSort}
-              rowCount={rows.length}
-            />
-            <TableBody>
-              {stableSort(rows, getComparator(order, orderBy))
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row, index) => {
-                  const isItemSelected = isSelected(row.title);
-                  const labelId = `enhanced-table-checkbox-${index}`;
+    <Container maxWidth="lg">
+      <div className={classes.root}>
+        <Paper className={classes.paper}>
+          <TableContainer>
+            <Table
+              className={classes.table}
+              aria-labelledby="tableTitle"
+              size={dense ? "small" : "medium"}
+              aria-label="enhanced table"
+              style={{ height: "85vh", width: "100%" }}
+            >
+              <EnhancedTableHead
+                classes={classes}
+                numSelected={selected.length}
+                order={order}
+                orderBy={orderBy}
+                onRequestSort={handleRequestSort}
+                rowCount={props.books.length}
+              />
+              <TableBody>
+                {stableSort(props.books, getComparator(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row, index) => {
+                    const isItemSelected = isSelected(row.title);
+                    const labelId = `enhanced-table-checkbox-${index}`;
 
-                  return (
-                    <TableRow
-                      hover
-                      role="checkbox"
-                      aria-checked={isItemSelected}
-                      tabIndex={-1}
-                      key={row.title}
-                      selected={isItemSelected}
-                    >
-                      <TableCell padding="checkbox" />
-
-                      <TableCell align="left">
-                        <img
-                          height="200px"
-                          width="200px"
-                          src={row.image}
-                          alt=""
-                        />
-                      </TableCell>
-
-                      <TableCell
-                        component="th"
-                        id={labelId}
-                        scope="row"
-                        padding="none"
+                    return (
+                      <TableRow
+                        hover
+                        role="checkbox"
+                        aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={row.title}
+                        selected={isItemSelected}
                       >
-                        {row.title}
-                      </TableCell>
-                      <TableCell align="left">{row.author}</TableCell>
-                      <TableCell align="left">{row.genre}</TableCell>
-                      <TableCell align="left">{row.price}</TableCell>
-                      <TableCell align="left">{row.ratings}</TableCell>
-                    </TableRow>
-                  );
-                })}
-              {emptyRows > 0 && (
-                <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
-                  <TableCell colSpan={6} />
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-        <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onChangePage={handleChangePage}
-          onChangeRowsPerPage={handleChangeRowsPerPage}
+                        <TableCell padding="checkbox" />
+
+                        <TableCell align="left">
+                          <img
+                            height="200px"
+                            width="200px"
+                            src={row.image}
+                            alt=""
+                          />
+                        </TableCell>
+
+                        <TableCell
+                          component="th"
+                          id={labelId}
+                          scope="row"
+                          padding="none"
+                        >
+                          {row.title}
+                        </TableCell>
+                        <TableCell align="left">{row.author}</TableCell>
+                        <TableCell align="left">{row.genre}</TableCell>
+                        <TableCell align="left">{row.price}</TableCell>
+                        <TableCell align="left">{row.ratings}</TableCell>
+                        <TableCell align="left">
+                          <Fab
+                            onClick={() => {
+                              data(row._id);
+                            }}
+                            color="primary"
+                            aria-label="add"
+                          >
+                            <AddIcon />
+                          </Fab>
+                        </TableCell>
+                      </TableRow>
+                    );
+                  })}
+                {emptyRows > 0 && (
+                  <TableRow style={{ height: (dense ? 33 : 53) * emptyRows }}>
+                    <TableCell colSpan={6} />
+                  </TableRow>
+                )}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <TablePagination
+            rowsPerPageOptions={[5, 10, 25]}
+            component="div"
+            count={props.books.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onChangePage={handleChangePage}
+            onChangeRowsPerPage={handleChangeRowsPerPage}
+          />
+        </Paper>
+        <FormControlLabel
+          control={<Switch checked={dense} onChange={handleChangeDense} />}
+          label="Dense padding"
         />
-      </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
-    </div>
+      </div>
+    </Container>
   );
 };
 
