@@ -13,7 +13,8 @@
     },
     "categories": {
       "auth": {
-        "bookLibraryApplicationAuth": {}
+        "bookLibraryApplicationAuth": {},
+        "userPoolGroups": {}
       }
     }
   }

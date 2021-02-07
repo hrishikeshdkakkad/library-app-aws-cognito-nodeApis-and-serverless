@@ -1,40 +1,32 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
-import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import { Auth } from "aws-amplify";
+// import { Auth } from "aws-amplify";
 
 import Amplify from "aws-amplify";
 import awsconfig from "./aws-exports";
-Amplify.configure(awsconfig);
 
-const getUserCreds = async () => {
-  try {
-    const user = await Auth.currentAuthenticatedUser();
-    console.log(user.signInUserSession);
-  } catch (error) {
-    console.log(error);
-  }
-};
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import HomePage from "./components/Home/HomePage";
+import Cart from "./components/ProtectedComponents/Cart/Cart";
+Amplify.configure(awsconfig);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <button
-          onClick={() => {
-            getUserCreds();
-          }}
-        >
-          This is the Button
-        </button>
-        <AmplifySignOut />
-        Learn React
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route path="/cart" component={Cart} />
+            </Switch>
+          </div>
+        </Router>
       </header>
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
