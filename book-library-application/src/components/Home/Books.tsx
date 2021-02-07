@@ -125,7 +125,6 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             </TableSortLabel>
           </TableCell>
         ))}
-        <CustomizedBadges />
       </TableRow>
     </TableHead>
   );
@@ -171,7 +170,11 @@ interface IBook {
   image: string;
   _id: string;
 }
-interface IProps {
+
+interface ICartContent {
+  cart_items: number;
+}
+interface IProps extends ICartContent {
   books: IBook[];
 }
 
@@ -180,6 +183,7 @@ function data(row: string) {
 }
 
 const BooksTable: React.FC<IProps> = (props: IProps) => {
+  console.log(props);
   const classes = useStyles();
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("author");
@@ -220,6 +224,7 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
 
   return (
     <Container maxWidth="lg">
+      <CustomizedBadges cart_item={props.cart_items} />
       <div className={classes.root}>
         <Paper className={classes.paper}>
           <TableContainer>

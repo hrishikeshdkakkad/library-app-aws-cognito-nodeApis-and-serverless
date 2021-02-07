@@ -16,13 +16,19 @@ const StyledBadge = withStyles((theme: Theme) =>
   })
 )(Badge);
 
-export default function CustomizedBadges() {
+interface IProps {
+  cart_item: number;
+}
+
+const CustomizedBadges: React.FC<IProps> = (props: IProps) => {
   const history = useHistory();
   return (
     <IconButton onClick={() => history.push("/cart")} aria-label="cart">
-      <StyledBadge badgeContent={4} color="secondary">
+      <StyledBadge badgeContent={props.cart_item} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>
   );
-}
+};
+
+export default CustomizedBadges;
