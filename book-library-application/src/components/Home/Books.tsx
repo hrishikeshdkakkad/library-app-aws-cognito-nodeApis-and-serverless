@@ -16,6 +16,8 @@ import Fab from "@material-ui/core/Fab";
 import Container from "@material-ui/core/Container";
 import CustomizedBadges from "../ProtectedComponents/Cart/Cart";
 
+import { addToCart } from "../../common/addToCartApiCall";
+
 interface Data {
   author: number;
   genre: string;
@@ -178,8 +180,9 @@ interface IProps extends ICartContent {
   books: IBook[];
 }
 
-function data(row: string) {
-  console.log(row);
+async function data(book_id: string) {
+  const cartResponse = await addToCart(book_id);
+  console.log(cartResponse);
 }
 
 const BooksTable: React.FC<IProps> = (props: IProps) => {
@@ -187,7 +190,7 @@ const BooksTable: React.FC<IProps> = (props: IProps) => {
   const classes = useStyles();
   const [order, setOrder] = React.useState<Order>("asc");
   const [orderBy, setOrderBy] = React.useState<keyof Data>("author");
-  const [selected, setSelected] = React.useState<string[]>([]);
+  const [selected] = React.useState<string[]>([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
