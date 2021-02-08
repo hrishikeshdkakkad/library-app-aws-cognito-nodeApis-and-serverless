@@ -15,7 +15,7 @@ const booksImage = upload.single('image');
 const bookId = upload.fields([{ name: 'bookID' }]);
 
 router.get('/books/list', libraryController.getAllBooks);
-router.post('/books/add', authMiddleware, isAdmin, validationMiddleware(CreateBookDTO, 'body'), booksImage, libraryController.addBookIntoDatabase);
+router.post('/books/add', authMiddleware, isAdmin, booksImage, libraryController.addBookIntoDatabase);
 router.post('/books/add-to-cart', authMiddleware, bookId, libraryController.AddBookToCart);
 router.patch('/books/remove-from-cart', authMiddleware, bookId, libraryController.RemoveBookFromUserCart);
 
