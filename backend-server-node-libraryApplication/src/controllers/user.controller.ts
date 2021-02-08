@@ -23,6 +23,17 @@ class UserController {
       next(error);
     }
   };
+
+  public login = async (req: Request, res: Response, next: NextFunction) => {
+    const { username, password } = req.body;
+    console.log(username, password);
+    try {
+      const user = await userService.login(username, password);
+      res.status(200).send({ user });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export const userController = new UserController();

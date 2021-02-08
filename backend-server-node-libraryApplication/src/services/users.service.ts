@@ -1,3 +1,6 @@
+import { InitiateAuthResponse } from 'aws-sdk/clients/cognitoidentityserviceprovider';
+import { config } from '../config/app.config';
+import { cognito } from '../constants';
 import HttpException from '../exceptions/HttpException';
 import { IUser } from '../interfaces/user.interface';
 import userModel from '../models/user.model';
@@ -21,6 +24,22 @@ class UserService {
 
     const foundUser: IUser = await this.user.findOne({ username: user });
     return foundUser;
+  }
+
+  async login(username: string, password: string): Promise<InitiateAuthResponse> {
+    if (isEmpty(username) || isEmpty(password)) throw new HttpException(400, 'Enter User details in the right format');
+
+    const params = {
+      AuthFlow: 'USER_PASSWORD_AUTH',
+      ClientId: config.auth.appClient,
+      AuthParameters: {
+        USERNAME: username,
+        PASSWORD: password,
+      },
+    };
+
+    const auth = await cognito.initiateAuth(params).promise();
+    return auth.AuthenticationResult.AccessToken;
   }
 }
 
