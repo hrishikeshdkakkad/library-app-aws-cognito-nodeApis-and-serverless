@@ -11,6 +11,7 @@ const {
   MONGO_HOST_PORT,
   BUCKET,
   BUCKET_REGION,
+  APP_CLIENT,
 } = process.env;
 
 export const config = {
@@ -27,6 +28,7 @@ export const config = {
     cognitoUserPoolId: COGNITO_USER_POOL_ID as string,
     tokenUse: TOKEN_USE as string,
     tokenExpiration: TOKEN_EXPIRATION as string,
+    appClient: APP_CLIENT as string,
   },
   s3: {
     bucket: BUCKET,
