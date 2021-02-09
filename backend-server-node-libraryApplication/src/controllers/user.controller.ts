@@ -28,8 +28,8 @@ class UserController {
     const { username, password } = req.body;
     console.log(username, password);
     try {
-      const user = await userService.login(username, password);
-      res.status(200).send({ user });
+      const userAccess = await userService.login(username, password);
+      res.status(200).send({ userAccess });
     } catch (error) {
       next(error);
     }
