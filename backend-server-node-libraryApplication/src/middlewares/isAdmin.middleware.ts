@@ -6,7 +6,7 @@ const isAdmin = (req: Request, res: Response, next: NextFunction): void => {
   if (userGroups.includes('admins')) {
     next();
   } else {
-    next(new HttpException(401, 'Unauthorized - Not an admin'));
+    next(new HttpException(403, 'Unauthorized - Not an admin'));
   }
 };
 

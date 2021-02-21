@@ -1,4 +1,6 @@
 {
+    "identityPoolName": "bookLibraryApplicationAuth_identitypool_d1e18cee",
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "bookli234b3edd",
     "userPoolName": "libraryApplicationUserPool",
     "autoVerifiedAttributes": [
@@ -30,7 +32,7 @@
     "userpoolClientSetAttributes": false,
     "sharedId": "234b3edd",
     "resourceName": "bookLibraryApplicationAuth",
-    "authSelections": "userPoolOnly",
+    "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -43,11 +45,11 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "defaultSocial",
     "userPoolGroups": true,
     "adminQueries": false,
     "triggers": "{}",
-    "hostedUI": false,
+    "hostedUI": true,
     "userPoolGroupList": [
         "admins",
         "applicationUsers"
@@ -57,5 +59,10 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUIDomainName": "cosmox",
+    "authProvidersUserPool": [],
+    "hostedUIProviderMeta": "[]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d2wodotw5oy327.amplifyapp.com/cart/\"],\"LogoutURLs\":[\"https://main.d2wodotw5oy327.amplifyapp.com/\"]}",
+    "authProviders": []
 }

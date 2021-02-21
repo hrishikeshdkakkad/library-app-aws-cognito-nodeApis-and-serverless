@@ -4,6 +4,10 @@ backend-server-node-libraryApplication/build
 backend-server-node-libraryApplication/src/logs/*
 .env
 new_user_credentials.csv
+k6iio
+library-app.pem
+new_user_credentials.csv
+images
 
 
 # dependencies
